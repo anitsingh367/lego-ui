@@ -1,18 +1,18 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { Button } from '../Button';
 import { Tooltip } from './';
 
 export default {
     title: 'Tooltip',
     component: Tooltip
-} as ComponentMeta<typeof Tooltip>;
+} as Meta<typeof Tooltip>;
 
-export const Basic: ComponentStory<typeof Tooltip> = (props) => {
-    return <Tooltip {...props} />;
-};
-Basic.args = {
-    title: 'Tooltip',
-    children: <Button>Hover Over Me</Button>,
-    placement: 'right'
+export const Basic: StoryObj<typeof Tooltip> = {
+    render: (args) => <Tooltip {...args} />,
+    args: {
+        title: 'Tooltip',
+        children: <Button>Hover Over Me</Button>,
+        placement: 'right'
+    }
 };

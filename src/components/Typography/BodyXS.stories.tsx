@@ -1,19 +1,19 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { BodyXS } from './';
 
 export default {
     title: 'Typography/BodyXS',
     component: BodyXS,
     argTypes: {
-        fontWeight: { type: 'number' }
+        fontWeight: { control: 'number' }
     }
-} as ComponentMeta<typeof BodyXS>;
+} as Meta<typeof BodyXS>;
 
-const Template: ComponentStory<typeof BodyXS> = (args) => <BodyXS {...args} />;
-
-export const bodyXS = Template.bind({});
-bodyXS.args = {
-    children: 'Body Extra Small',
-    textTransform: 'capitalize'
+export const bodyXS: StoryObj<typeof BodyXS> = {
+    render: (args) => <BodyXS {...args} />,
+    args: {
+        children: 'Body Extra Small',
+        textTransform: 'capitalize'
+    }
 };

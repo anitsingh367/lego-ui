@@ -1,19 +1,19 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { BodyMedium } from './';
 
 export default {
     title: 'Typography/BodyMedium',
     component: BodyMedium,
     argTypes: {
-        fontWeight: { type: 'number' }
+        fontWeight: { control: 'number' }
     }
-} as ComponentMeta<typeof BodyMedium>;
+} as Meta<typeof BodyMedium>;
 
-const Template: ComponentStory<typeof BodyMedium> = (args) => <BodyMedium {...args} />;
-
-export const bodyMedium = Template.bind({});
-bodyMedium.args = {
-    children: 'Body Medium',
-    textTransform: 'capitalize'
+export const bodyMedium: StoryObj<typeof BodyMedium> = {
+    render: (args) => <BodyMedium {...args} />,
+    args: {
+        children: 'Body Medium',
+        textTransform: 'capitalize'
+    }
 };

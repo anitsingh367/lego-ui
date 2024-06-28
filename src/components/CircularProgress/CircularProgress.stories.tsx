@@ -1,20 +1,18 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { CircularProgress } from '.';
+import React from "react";
+import { Meta, StoryObj } from "@storybook/react";
+import { CircularProgress } from ".";
 
-export default {
-    title: 'CircularProgress',
-    component: CircularProgress
-} as ComponentMeta<typeof CircularProgress>;
+const meta: Meta<typeof CircularProgress> = {
+  title: "CircularProgress",
+  component: CircularProgress,
+};
+export default meta;
 
-export const Basic: ComponentStory<typeof CircularProgress> = (args) => (
-    <>
-        <CircularProgress {...args} />
-    </>
-);
-
-Basic.args = {
-    color: 'primary',
-    size: 'sm',
-    thickness: 3.6
+export const Basic: StoryObj<typeof CircularProgress> = {
+  render: (args) => <CircularProgress {...args} />,
+  args: {
+    color: "primary",
+    size: "sm",
+    thickness: 3.6,
+  },
 };

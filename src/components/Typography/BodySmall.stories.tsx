@@ -1,19 +1,19 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { BodySmall } from './';
 
 export default {
     title: 'Typography/BodySmall',
     component: BodySmall,
     argTypes: {
-        fontWeight: { type: 'number' }
+        fontWeight: { control: 'number' }
     }
-} as ComponentMeta<typeof BodySmall>;
+} as Meta<typeof BodySmall>;
 
-const Template: ComponentStory<typeof BodySmall> = (args) => <BodySmall {...args} />;
-
-export const bodySmall = Template.bind({});
-bodySmall.args = {
-    children: 'Body Small',
-    textTransform: 'capitalize'
+export const bodySmall: StoryObj<typeof BodySmall> = {
+    render: (args) => <BodySmall {...args} />,
+    args: {
+        children: 'Body Small',
+        textTransform: 'capitalize'
+    }
 };
