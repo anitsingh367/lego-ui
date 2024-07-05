@@ -2,11 +2,34 @@ import { Meta, StoryObj } from "@storybook/react";
 
 import { Button } from ".";
 
-
 const meta: Meta<typeof Button> = {
   title: "Button",
   component: Button,
-  argTypes: { onClick: { action: "onClick" } },
+  argTypes: {
+    onClick: { action: "onClick" },
+    variant: {
+      options: ["contained", "outlined", "text"],
+      control: { type: "select" },
+    },
+    color: {
+      options: [
+        "primary",
+        "secondary",
+        "tertiary",
+        "error",
+        "success",
+        "warning",
+      ],
+      control: { type: "select" },
+    },
+    size: {
+      options: ["xs", "small", "medium", "large"],
+      control: { type: "select" },
+    },
+    isLoading: {
+      control: { type: "boolean" },
+    },
+  },
 };
 export default meta;
 
@@ -20,68 +43,3 @@ export const Primary: Story = {
     size: "small",
   },
 };
-
-export const PrimaryWithLoader: Story = {
-  args: {
-    variant: "contained",
-    children: "Basic",
-    color: "primary",
-    size: "small",
-    isLoading: true,
-  },
-};
-
-export const Secondary: Story = {
-  args: {
-    variant: "contained",
-    children: "Basic",
-    color: "secondary",
-    size: "small",
-  },
-};
-
-export const Tertiary: Story = {
-  args: {
-    variant: "contained",
-    children: "Basic",
-    color: "tertiary",
-    size: "small",
-  },
-};
-
-export const PrimaryOutlined: Story = {
-  args: {
-    variant: "outlined",
-    children: "Basic",
-    color: "primary",
-    size: "small",
-  },
-};
-
-export const SecondaryOutlined: Story = {
-  args: {
-    variant: "outlined",
-    children: "Basic",
-    color: "secondary",
-    size: "small",
-  },
-};
-
-export const TertiaryOutlined: Story = {
-  args: {
-    variant: "outlined",
-    children: "Basic",
-    color: "tertiary",
-    size: "small",
-  },
-};
-
-export const TertiaryText: Story = {
-  args: {
-    variant: "text",
-    children: "Basic",
-    color: "tertiary",
-    size: "small",
-  },
-};
-

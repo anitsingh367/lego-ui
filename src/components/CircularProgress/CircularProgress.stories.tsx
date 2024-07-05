@@ -5,6 +5,25 @@ import { CircularProgress } from ".";
 const meta: Meta<typeof CircularProgress> = {
   title: "CircularProgress",
   component: CircularProgress,
+  argTypes: {
+    color: {
+      options: [
+        "primary",
+        "secondary",
+        "tertiary",
+        "error",
+        "success",
+        "warning",
+        "info",
+        "inherit",
+      ],
+      control: { type: "select" },
+    },
+    size: {
+      options: ["xxs", "xs", "sm", "md", "lg", "xl", "xxl"],
+      control: { type: "select" },
+    },
+  },
 };
 export default meta;
 
