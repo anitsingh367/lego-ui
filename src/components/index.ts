@@ -5,3 +5,4 @@ export * from "./TextField";
 export * from "./CircularProgress";
 export * from "./Chip";
 export * from "./Tooltip";
+export * from "./Icons";
